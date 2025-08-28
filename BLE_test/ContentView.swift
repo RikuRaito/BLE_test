@@ -93,6 +93,7 @@ class BLEController: NSObject, ObservableObject, CBCentralManagerDelegate, CBPer
         
         if peripheralManager.isAdvertising {
             peripheralManager.stopAdvertising()
+            self.isAdvertising = false
             print("Advertising stopped.")
             updateReceivedText("アドバタイズを停止しました")
             return
